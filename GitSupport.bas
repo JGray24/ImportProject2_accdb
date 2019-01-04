@@ -138,7 +138,7 @@ Next
 End Sub
 
 
-Public Sub ExportSourceFiles(destPath As String)
+Private Sub ExportSourceFiles(destPath As String)
  
 Dim component As VBComponent
 Dim KillFileAndPath  As String
@@ -878,7 +878,7 @@ Do
 Loop
 End Function
 
-Function RunFile(strFile As String, strWndStyle As String)
+Private Function RunFile(strFile As String, strWndStyle As String)
 On Error GoTo Error_Handler
  
     Shell "cmd /k """ & strFile & """", strWndStyle
@@ -1790,7 +1790,7 @@ Call FileSave(GitPushText, GitProjectFolderName & GitPushName)
 
 End Sub
 
-Public Function GitLogIn() As String
+Private Function GitLogIn() As String
 Dim XX, II, JJ
 II = InStrRev(GitHubRemoteAdd, "/")
 GitLogIn = ""
@@ -1802,7 +1802,7 @@ GitLogIn = Mid(GitHubRemoteAdd, JJ + 1, (II - JJ) - 1)
 
 End Function
 
-Public Function GitHubRemoteUrl() As String
+Private Function GitHubRemoteUrl() As String
 Dim XX, II, JJ
 GitHubRemoteUrl = GitHubRemoteAdd
 
@@ -1818,7 +1818,7 @@ GitHubRemoteUrl = Left(GitHubRemoteUrl, II) & GitProjectName & ".git"
 
 End Function
 
-Public Function GitProjectName() As String
+Private Function GitProjectName() As String
 
 Dim I
 GitProjectName = Application.CurrentProject.Name
